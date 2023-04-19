@@ -26,15 +26,19 @@
       sizes="16x16"
       href="./images/favicon-16x16.png"
     />
-    <title>MRstudio</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <title>Genio Marketing</title>
   </head>
   <body>
     <nav
-      class="navbar navbar-expand-sm navbar-dark"
+      class="navbar navbar-expand-sm navbar-dark dark"
       style="background-color: #521380"
+      id="navv"
     >
       <div class="container">
-        <a class="navbar-brand" href="#">MRstudio</a>
+        <a style="color: #ffb429;" class="navbar-brand" href="#">Genio Marketing</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -52,330 +56,460 @@
         >
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="#">Productos</a>
+              <a class="nav-link" onclick="productos()">Nosotros</a>
+            </li>
+            
+            <li class="nav-item" id="contacto_enlace">
+              <a class="nav-link" href="#contacto">Contacto</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Servicios</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Recursos</a>
-            </li>
-            <li class="nav-item">
-              <a
+              <a onclick="inicio()"
                 class="nav-link btn btn-primary"
-                href="#"
+                href="#navv"
                 style="
                   color: #333333;
                   background-color: #a2ffb1;
                   font-weight: bold;
                 "
-                >Left´s Talk</a
+                >Home</a
               >
             </li>
           </ul>
         </div>
       </div>
     </nav>
-
-    <div
-      class="container-fluid"
-      style="background-color: #521380; color: #ffffff"
-    >
-      <div class="row" style="padding: 1rem">
-        <div class="col-md-6">
-          <h1
-            style="
-              font-size: 4rem;
-              font-weight: bold;
-              font-family: system-ui, -apple-system, BlinkMacSystemFont,
-                'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
-                'Helvetica Neue', sans-serif;
-            "
-          >
-            Marketing Agency
-          </h1>
-          <!-- <p style="font-size: 2rem">90%</p> -->
-          <img
-            src="./images/redestodas.png"
-            style="position: relative; left: 9rem; width: 50%"
-          />
-
-          <form class="form-inline mt-3">
-            <div class="form-group mr-3" style="width: 90%; display: flex">
-              <input
-                type="text"
-                class="form-control"
-                id="search"
-                placeholder="Search in MR"
-                style="width: 100%"
-              />
-
-              <button
-                type="submit"
-                class="btn btn-primary"
-                style="
-                  background-color: #ffc75c;
-                  border: #ffc75c;
-                  color: #521380;
-                "
-              >
-                Go
-              </button>
-            </div>
-          </form>
-        </div>
-        <div class="col-md-6">
-          <img
-            src="./images/fondoMarketing.jpg"
-            class="img-fluid"
-            style="border-radius: 20rem 28rem 20rem 17rem"
-          />
-        </div>
-      </div>
-    </div>
-    <div
-      class=""
-      style="background: #ffc75c; display: flex; justify-content: center"
-    >
-      <div class="row justify-content-center">
-        <div class="col-md-12">
-          <h1 class="text-2xl font-bold mb-4">
-            Trusted by Over 15000 Companies
-          </h1>
-          <div
-            class="mt-3 mb-3"
-            style="background: #fafafa; padding: 5px; border-radius: 1rem"
-          >
-            <div class="text-center">
-              <img
-                src="https://http2.mlstatic.com/frontend-assets/mp-web-navigation/ui-navigation/5.31.0/mercadopago/logo__large.png"
-                style="width: 4rem"
-              />
-              <img
-                src="https://www.paypalobjects.com/digitalassets/c/website/logo/full-text/pp_fc_hl.svg"
-                style="width: 4rem"
-              />
-              <img src="./images/MasterCard_Logo.svg.png" style="width: 4rem" />
-              <img src="./images/Visa_Inc._logo.svg.png" style="width: 4rem" />
-            </div>
+    <div id="home">
+      <div
+        class="container-fluid"
+        style="background-color: #521380; color: #ffffff"
+      >
+        <div class="row" style="padding: 1rem">
+          <div class="col-md-6">
+            <h1
+              style="
+                color: #ffc75c;
+                font-size: 4rem;
+                font-weight: bold;
+                font-family: system-ui, -apple-system, BlinkMacSystemFont,
+                  'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+                  'Helvetica Neue', sans-serif;
+              "
+            >
+              Marketing Agency
+            </h1>
+            <!-- <p style="font-size: 2rem">90%</p> -->
+            <img
+              src="./images/redestodas.png"
+              style="position: relative; left: 9rem; width: 50%"
+            />
+          </div>
+          <div class="col-md-6" id="imgGo">
+            <img
+              src="./images/fondoMarketing.jpg"
+              class="img-fluid"
+              style="border-radius: 20rem 28rem 20rem 17rem"
+            />
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="container mt-5">
-      <div class="row">
-        <div class="col-md-4">
-          <div class="card" style="background-color: #ff9158">
-            <div class="card-body">
-              <h5 class="card-title text-white">Estrategias de SEO</h5>
-              <p
-                class="card-text"
-                style="
-                  background-color: #fafafa;
-                  padding: 5px;
-                  border-radius: 5px;
-                "
-              >
-                Aprenda cómo optimizar su sitio web para mejorar su visibilidad
-                en los resultados de búsqueda de Google y demas buscadores.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card" style="background-color: #ffb429">
-            <div class="card-body">
-              <h5 class="card-title text-white">
-                Publicidad en redes sociales
-              </h5>
-              <p
-                class="card-text"
-                style="
-                  background-color: #fafafa;
-                  padding: 5px;
-                  border-radius: 5px;
-                "
-              >
-                Descubra cómo crear anuncios efectivos en Facebook, Instagram y
-                otras plataformas para llegar a su público objetivo.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card" style="background-color: #143c44">
-            <div class="card-body">
-              <h5 class="card-title text-white">Email marketing</h5>
-              <p
-                class="card-text"
-                style="
-                  background-color: #fafafa;
-                  padding: 5px;
-                  border-radius: 5px;
-                "
-              >
-                Aprenda cómo crear campañas de correo electrónico efectivas para
-                mantenerse en contacto con sus clientes .
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="container mt-5">
-      <div class="row">
-        <div class="col-sm-6">
-          <h2>Optimización de motores de búsqueda</h2>
-          <p>
-            cómo mejorar la visibilidad de su sitio web" Este subtitulo se
-            relaciona con una estrategia clave en el marketing digital, la
-            optimización de motores de búsqueda o SEO. El contenido podría
-            abordar técnicas para mejorar el posicionamiento de un sitio web en
-            los resultados de búsqueda de Google u otros motores de búsqueda,
-            como la investigación de palabras clave, la optimización de
-            contenido y la construcción de enlaces.
-          </p>
-        </div>
-        <div class="col-sm-6">
-          <img
-            src="./images/happy.jpg"
-            alt="Imagen de ejemplo"
-            class="img-fluid"
-            style="border-radius: 20rem 5rem 20rem 0rem"
-          />
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-6">
-          <img
-            src="./images/mirar.jpg"
-            alt="Imagen de ejemplo"
-            class="img-fluid img-flip"
-            style="border-radius: 0rem 42rem 12rem 47rem"
-          />
-        </div>
-        <div class="col-sm-6">
-          <h2>Marketing de contenidos</h2>
-          <p>
-            cómo crear contenido valioso para su audiencia" El marketing de
-            contenidos se ha convertido en una herramienta esencial para llegar
-            a las audiencias en línea. Este subtitulo se relaciona con la
-            creación de contenido de calidad y relevante que atraiga a los
-            clientes potenciales y fomente la lealtad de la audiencia existente.
-            El contenido podría abordar estrategias para la creación de
-            contenido, incluyendo la identificación de la audiencia objetivo, la
-            selección de formatos de contenido y la distribución a través de
-            diversos canales en línea.
-          </p>
-        </div>
-      </div>
-    </div>
-    <section id="email" class="" style="background: #521380">
-      <div class="container mt-5">
-        <div class="row mt-5">
-          <div
-            class="col-lg-6 mx-auto m-5"
-            style="
-              background-color: #fafafa;
-              padding: 1rem;
-              border-radius: 1rem;
-            "
-          >
-            <div class="container">
-              <div class="row">
-                <div class="col-sm-6">
-                  <div class="newsletter-form">
-                    <h2>Subscribe Newsletter</h2>
-                    <p>
-                      Subscribe to our newsletter and stay up-to-date with the
-                      latest news and updates.
-                    </p>
-                    <form>
-                      <div class="form-group">
-                        <input
-                          type="email"
-                          class="form-control"
-                          id="email"
-                          placeholder="Enter your email address"
-                        />
-                      </div>
-                    </form>
-                    <button onclick="nombreCompleto()" class="btn btn-primary">
-                      Vamos
-                    </button>
-                  </div>
-                </div>
-                <div class="col-sm-6">
-                  <img src="./images/email.png" alt="Newsletter Image" />
-                </div>
+      <div
+        class=""
+        style="background: #ffc75c; display: flex; justify-content: center"
+      >
+        <div class="row justify-content-center">
+          <div class="col-md-12">
+            <h1 class="text-2xl font-bold mb-4">
+              Elegidos por mas de 15.000 empresas
+            </h1>
+            <div
+              class="mt-3 mb-3"
+              style="background: #fafafa; padding: 5px; border-radius: 1rem"
+            >
+              <div class="text-center">
+                <img
+                  src="https://http2.mlstatic.com/frontend-assets/mp-web-navigation/ui-navigation/5.31.0/mercadopago/logo__large.png"
+                  style="width: 4rem"
+                />
+                <img
+                  src="https://www.paypalobjects.com/digitalassets/c/website/logo/full-text/pp_fc_hl.svg"
+                  style="width: 4rem"
+                />
+                <img
+                  src="./images/MasterCard_Logo.svg.png"
+                  style="width: 4rem"
+                />
+                <img
+                  src="./images/Visa_Inc._logo.svg.png"
+                  style="width: 4rem"
+                />
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
 
-    <section
-      id="nombre_completo"
-      class=""
-      style="background: #521380; display: none"
-    >
       <div class="container mt-5">
-        <div class="row mt-5">
-          <div
-            class="col-lg-6 mx-auto m-5"
-            style="
-              background-color: #fafafa;
-              padding: 1rem;
-              border-radius: 1rem;
-            "
-          >
-            <div class="container">
-              <div class="row">
-                <div class="col-sm-6">
-                  <div class="newsletter-form">
-                    <h2>Subscribe Newsletter</h2>
-                    <p>Por favor, ingrese su nombre y apellido completo:</p>
-                    <form>
-                      <div class="form-group">
-                        <label for="nombre">Nombre:</label>
-                        <input
-                          type="text"
-                          name="nombre"
-                          class="form-control"
-                          id="nombre"
-                          placeholder="Ingresa tu nombre"
-                        />
-                      </div>
-                      <div class="form-group">
-                        <label for="apellido">Apellido:</label>
-                        <input
-                          type="text"
-                          name="apellido"
-                          class="form-control"
-                          id="apellido"
-                          placeholder="Ingresa tu apellido"
-                        />
-                      </div>
-                      <button class="btn btn-primary">Suscribirse</button>
-                    </form>
-                  </div>
-                </div>
-                <div class="col-sm-6">
-                  <img
-                    src="./images/email.png"
-                    alt="Imagen de Boletín de Noticias"
-                  />
-                </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card" style="background-color: #ff9158">
+              <div class="card-body">
+                <h5 class="card-title text-white">Estrategias de SEO</h5>
+                <p
+                  class="card-text"
+                  style="
+                    background-color: #fafafa;
+                    padding: 5px;
+                    border-radius: 5px;
+                  "
+                >
+                  Aprenda cómo optimizar su sitio web para mejorar su
+                  visibilidad en los resultados de búsqueda de Google y demas
+                  buscadores.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card" style="background-color: #ffb429">
+              <div class="card-body">
+                <h5 class="card-title text-white">
+                  Publicidad en redes sociales
+                </h5>
+                <p
+                  class="card-text"
+                  style="
+                    background-color: #fafafa;
+                    padding: 5px;
+                    border-radius: 5px;
+                  "
+                >
+                  Descubra cómo crear anuncios efectivos en Facebook, Instagram
+                  y otras plataformas para llegar a su público objetivo.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card" style="background-color: #143c44">
+              <div class="card-body">
+                <h5 class="card-title text-white">Email marketing</h5>
+                <p
+                  class="card-text"
+                  style="
+                    background-color: #fafafa;
+                    padding: 5px;
+                    border-radius: 5px;
+                  "
+                >
+                  Aprenda cómo crear campañas de correo electrónico efectivas
+                  para mantenerse en contacto con sus clientes .
+                </p>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
 
+      <div class="container mt-5">
+        <div class="row">
+          <div class="col-sm-6">
+            <h2>Optimización de motores de búsqueda</h2>
+            <p>
+              cómo mejorar la visibilidad de su sitio web" Este subtitulo se
+              relaciona con una estrategia clave en el marketing digital, la
+              optimización de motores de búsqueda o SEO. El contenido podría
+              abordar técnicas para mejorar el posicionamiento de un sitio web
+              en los resultados de búsqueda de Google u otros motores de
+              búsqueda, como la investigación de palabras clave, la optimización
+              de contenido y la construcción de enlaces.
+            </p>
+          </div>
+          <div class="col-sm-6">
+            <img
+              src="./images/happy.jpg"
+              alt="Imagen de ejemplo"
+              class="img-fluid"
+              style="border-radius: 20rem 5rem 20rem 0rem"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <img
+              src="./images/mirar.jpg"
+              alt="Imagen de ejemplo"
+              class="img-fluid img-flip"
+              style="border-radius: 0rem 42rem 12rem 47rem"
+            />
+          </div>
+          <div class="col-sm-6">
+            <h2>Marketing de contenidos</h2>
+            <p>
+              cómo crear contenido valioso para su audiencia" El marketing de
+              contenidos se ha convertido en una herramienta esencial para
+              llegar a las audiencias en línea. Este subtitulo se relaciona con
+              la creación de contenido de calidad y relevante que atraiga a los
+              clientes potenciales y fomente la lealtad de la audiencia
+              existente. El contenido podría abordar estrategias para la
+              creación de contenido, incluyendo la identificación de la
+              audiencia objetivo, la selección de formatos de contenido y la
+              distribución a través de diversos canales en línea.
+            </p>
+          </div>
+        </div>
+      </div>
+      <section id="email" class="" style="background: #521380">
+        <div class="container mt-5">
+          <div class="row mt-5">
+            <div
+              class="col-lg-6 mx-auto m-5"
+              style="
+                background-color: #fafafa;
+
+                border-radius: 1rem;
+              "
+            >
+              <div class="container" id="contacto">
+                <div class="row suscribir">
+                  <div class="col">
+                    <div class="newsletter-form">
+                      <h2>Subscribete</h2>
+                      <p>
+                        Suscribete para recibir nuestras noticias y novedades.
+                      </p>
+                      <form>
+                        <div class="form-group">
+                          <input
+                            type="email"
+                            class="form-control"
+                            id="input_email"
+                            placeholder="Email"
+                            required
+                          />
+                        </div>
+                      </form>
+                      <button
+                        onclick="nombreCompleto()"
+                        class="btn btn-primary vamos"
+                      >
+                        Vamos
+                      </button>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <img
+                      src="./images/email.svg"
+                      alt="Newsletter Image"
+                      class="img-fluid"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="nombre_completo"
+        class=""
+        style="background: #521380; display: none"
+      >
+        <div class="container mt-5">
+          <div class="row mt-5">
+            <div
+              class="col-lg-6 mx-auto m-5"
+              style="
+                background-color: #fafafa;
+
+                border-radius: 1rem;
+              "
+            >
+              <div class="container">
+                <div class="row suscribir">
+                  <div class="col">
+                    <div class="newsletter-form">
+                      <h2>Subscribete</h2>
+                      <p>Por favor, ingrese su nombre y apellido completo:</p>
+                      <form>
+                        <div class="form-group">
+                          <input
+                            type="text"
+                            name="nombre"
+                            class="form-control mt-1"
+                            id="nombre"
+                            placeholder="Ingresa tu nombre"
+                            required
+                          />
+                        </div>
+                        <div class="form-group">
+                          <input
+                            type="text"
+                            name="apellido"
+                            class="form-control mt-1"
+                            id="apellido"
+                            placeholder="Ingresa tu apellido"
+                            required
+                          />
+                        </div>
+                        <div class="form-group">
+                          <input
+                            type="tel"
+                            name="telefono"
+                            class="form-control mt-1"
+                            id="telefono"
+                            placeholder="Ingresa tu telefono"
+                            required
+                          />
+                        </div>
+                        <button
+                          class="btn btn-primary vamos"
+                          onclick="suscribirse()"
+                        >
+                          Suscribirse
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <img
+                      src="./images/telefono.svg"
+                      alt="Newsletter Image"
+                      class="img-fluid"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div id="productos" style="display: none">
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+          <li data-target="#myCarousel" data-slide-to="3"></li>
+        </ol>
+
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              class="d-block w-100"
+              src="./images/ofic.jpg"
+              alt="Primera imagen"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              class="d-block w-100"
+              src="./images/equipo.jpg"
+              alt="Segunda imagen"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              class="d-block w-100"
+              src="./images/redes.jpg"
+              alt="Tercera imagen"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              class="d-block w-100"
+              src="./images/seo.jpg"
+              alt="Cuarta imagen"
+            />
+          </div>
+        </div>
+
+        <a
+          class="carousel-control-prev"
+          href="#myCarousel"
+          role="button"
+          data-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Anterior</span>
+        </a>
+        <a
+          class="carousel-control-next"
+          href="#myCarousel"
+          role="button"
+          data-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Siguiente</span>
+        </a>
+      </div>
+      <section id="nuestra-organizacion" class="py-5 bg-light">
+        <div class="container">
+          <h2 class="text-center mb-5">Nuestra Organización</h2>
+          <div class="row">
+            <div class="col-md-6">
+              <img
+                src="./images/quienessomos.jpg"
+                alt="Nuestra Organización"
+                class="img-fluid"
+              />
+            </div>
+            <div class="col-md-6">
+              <h3 class="mb-4">¿Quiénes somos?</h3>
+              <p>
+                Somos una agencia de marketing digital enfocada en ayudar a
+                pequeñas y medianas empresas a aumentar su presencia en línea y
+                generar más ventas a través de diversas estrategias de marketing
+                digital.
+              </p>
+              <h3 class="mb-4">Nuestros servicios</h3>
+              <ul>
+                <li>Optimización de motores de búsqueda (SEO)</li>
+                <li>Publicidad en línea (PPC)</li>
+                <li>Marketing de contenidos</li>
+                <li>Redes sociales</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="" style="background-color:#ffc75c ;">
+        <div class="row">
+            <h2 class="text-center">Quien soy?</h2>
+          
+          <div class="col-lg-4" style="display: grid;justify-items: center;">
+            <div class="card mb-3" style="width: 35%;">
+              <img src="./images/daia.jpg"  class="card-img-top" alt="..." >
+              <div class="card-body" style="background-color: #521380;color: #fafafa;">
+                <h5 class="card-title">Diana Carvajal</h5>
+                <p class="card-text">¡Hola! soy experta en Marketing Digital con más de 5 años de experiencia. Me apasiona la tecnología y siempre estoy buscando aprender cosas nuevas.</p>
+                <p>En mi tiempo libre, me gusta trabajar en proyectos personales y contribuir a proyectos de código abierto. También disfruto de los deportes al aire libre y la música.</p>
+                <p>Si estás buscando alguien apasionado y dedicado para tu próximo proyecto, ¡no dudes en contactarme!</p>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      
+      <div class="container" style="display: grid;justify-items: center;">
+        <h1>Clientes satisfechos</h1>
+        <table class="table">
+          <thead>
+            <tr>
+              
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+
+    </div>
+    </div>
     <footer class="" style="background-color: #ffc75c">
       <div class="container">
         <div class="row">
@@ -398,9 +532,7 @@
 
             <ul class="list-unstyled">
               <li>
-                <a href="#"
-                  ><i class="bi bi-linkedin" style="color: #333333"></i
-                ></a>
+                
               </li>
               <li>
                 <a href="#"
@@ -417,7 +549,13 @@
         </div>
       </div>
     </footer>
-    <script src="./js/index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="./js/index.js" defer></script>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </body>
 </html>

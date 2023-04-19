@@ -1,6 +1,15 @@
 body {
   background-color: #f2eee5;
 }
+h2 {
+  color: #521380;
+}
+input {
+  border: 1px solid #521380;
+}
+.dark {
+  cursor: pointer;
+}
 .img-flip {
   transform: scaleX(-1);
   filter: FlipH;
@@ -25,7 +34,7 @@ body {
   width: 100%;
   padding: 10px;
   margin-bottom: 20px;
-  border: none;
+
   border-radius: 4px;
   box-shadow: none;
 }
@@ -46,4 +55,18 @@ body {
 .newsletter-form img {
   max-width: 50%;
   height: 75%;
+}
+.vamos {
+  background-color: #ffc75c;
+  border-color: #ffc75c;
+  color: #521380;
+}
+.vamos:hover {
+  background-color: #fafafa;
+  border-color: #521380;
+  color: #521380;
+}
+
+.suscribir {
+  align-items: center;
 }
